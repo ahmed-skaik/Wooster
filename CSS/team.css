@@ -1,0 +1,129 @@
+header {
+    position: static;
+}
+
+.special-heading {
+    padding-top: var(--padding-top);
+}
+
+.parent {
+    padding: 45px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr) ;
+    gap: 10px 10px;
+    grid-template-areas: 
+    "one one two three"
+    "four five five ."
+    ". six six ."
+    "seven eight nine ten";
+}
+
+.parent div {
+    padding: 20px;
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+.w h4 {
+    color: rgb(0 0 0 / 45%);
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.b h4 {
+    color: rgb(250 250 250 / 50%);
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.p-up {
+    font-weight: bold;
+}
+
+.one {
+    grid-area: one;
+    background-color: white;
+    color: black;
+    position: relative;
+}
+
+.two {
+    grid-area: two;
+    background-color: white;
+    color: black;
+    position: relative;
+}
+
+
+.three {
+    grid-area: three;
+    grid-row: span 3;
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+.four {
+    grid-area: four;
+    grid-row: span 2;
+    background-color: white;
+    color: black;
+    position: relative;
+}
+
+.five {
+    grid-area: five;
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+.six {
+    grid-area: six;
+    background-color: white;
+    color: black;
+    position: relative;
+}
+
+.seven {
+    grid-area: seven;
+    grid-row: span 2;
+    background-color: white;
+    color: black;
+    position: relative;
+}
+
+.eight {
+    grid-area: eight;
+    grid-row: span 2;
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+.nine {
+    grid-area: nine;
+    grid-row: span 2;
+    background-color: white;
+    color: black;
+    position: relative;
+}
+
+.ten {
+    grid-area: ten;
+    grid-row: span 2;
+    background-color: white;
+    color: black;
+    position: relative;
+}
+
+.pseudo::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ff3d00;
+}
