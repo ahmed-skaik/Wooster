@@ -1,129 +1,205 @@
+/* header start */
 header {
     position: static;
 }
 
+/* header end */
+
+/* start components */
 .special-heading {
     padding-top: var(--padding-top);
 }
 
-.parent {
-    padding: 45px;
+/* end components */
+
+/* team start */
+.team .container {
+    padding: 0 45px 45px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr) ;
-    gap: 10px 10px;
+    grid-template-rows: none ;
+    gap: 30px;
     grid-template-areas: 
     "one one two three"
     "four five five ."
-    ". six six ."
+    ". six six six"
     "seven eight nine ten";
 }
 
-.parent div {
+.team .container div.b,
+.team .container div.w {
     padding: 20px;
     border: 1px solid black;
     border-bottom: none;
+    overflow: hidden;
 }
 
-.w h4 {
-    color: rgb(0 0 0 / 45%);
-    font-weight: normal;
-    font-size: 15px;
-}
-
-.b h4 {
-    color: rgb(250 250 250 / 50%);
-    font-weight: normal;
-    font-size: 15px;
-}
-
-.p-up {
-    font-weight: bold;
-}
-
-.one {
-    grid-area: one;
-    background-color: white;
-    color: black;
-    position: relative;
-}
-
-.two {
-    grid-area: two;
-    background-color: white;
-    color: black;
-    position: relative;
-}
-
-
-.three {
-    grid-area: three;
-    grid-row: span 3;
-    background-color: black;
-    color: white;
-    position: relative;
-}
-
-.four {
-    grid-area: four;
-    grid-row: span 2;
-    background-color: white;
-    color: black;
-    position: relative;
-}
-
-.five {
-    grid-area: five;
-    background-color: black;
-    color: white;
-    position: relative;
-}
-
-.six {
-    grid-area: six;
-    background-color: white;
-    color: black;
-    position: relative;
-}
-
-.seven {
-    grid-area: seven;
-    grid-row: span 2;
-    background-color: white;
-    color: black;
-    position: relative;
-}
-
-.eight {
-    grid-area: eight;
-    grid-row: span 2;
-    background-color: black;
-    color: white;
-    position: relative;
-}
-
-.nine {
-    grid-area: nine;
-    grid-row: span 2;
-    background-color: white;
-    color: black;
-    position: relative;
-}
-
-.ten {
-    grid-area: ten;
-    grid-row: span 2;
-    background-color: white;
-    color: black;
-    position: relative;
-}
-
-.pseudo::before {
+.team .container div::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: #ff3d00;
 }
+
+.team .container div.b ::selection {
+    background-color: white;
+    color: black;
+}
+
+.team .container div h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.team .container div .job {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.team .container div .job i {
+    color: #777;
+    padding: 0 10px 0 0;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    border-right: 1px solid #777;
+}
+
+
+.team .container div .hr {
+    height: 1px;
+    background-color: #777;
+    width: 60px;
+}
+
+.team .container div.w h3 {
+    color: #333;
+}
+
+.team .container div.w p {
+    color: #777;
+}
+
+.team .container div h6 {
+    color: #777;
+    font-weight: 400;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.team .container p {
+    line-height: 1.4;
+    font-size: 14px;
+    margin: 0 0 18px;
+}
+
+.team .container p:first-of-type {
+    font-weight: bold;
+}
+
+.one , .two , .four , .six , .seven , .nine , .ten {
+    background-color: white;
+    color: black;
+    position: relative;
+}
+
+.three , .five , .eight {
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+    grid-row: span 2;
+}
+
+.four {
+    grid-area: four;
+    grid-row: span 2;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.seven {
+    grid-area: seven;
+    grid-row: span 2;
+}
+
+.eight {
+    grid-area: eight;
+    grid-row: span 2;
+}
+
+.nine {
+    grid-area: nine;
+    grid-row: span 2;
+}
+
+.ten {
+    grid-area: ten;
+    grid-row: span 2;
+}
+
+@media (max-width: 767px) {
+    .team .container {
+        grid-template-columns: repeat(3, minmax(30px, 1fr));
+        gap: 10px;
+        grid-template-areas: 
+        "one one three"
+        "four five five"
+        ". six six"
+        "seven seven eight";
+        }
+
+        .team .container div.two ,
+        .team .container div.nine,
+        .team .container div.ten {
+            display: none;
+        }
+
+        .three {
+            grid-area: three;
+            grid-row: span 1;
+        }
+}
+
+@media (max-width: 600px) {
+    .team .container h3 {
+        font-size: 14px !important;
+    }
+
+    .team .container h6 {
+        font-size: 8px !important;
+
+    }
+
+    .team .container i {
+        font-size: 10px !important;
+    }
+
+    .team .container p {
+        font-size: 8px;
+        text-align: center;
+    }
+}
+
+/* team end */

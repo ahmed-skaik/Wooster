@@ -734,7 +734,7 @@ max-width: 100%;
 .about .container a {
   text-decoration: none;
   padding: 15px 30px;
-  margin: 25px auto 40px;
+  margin: 15px auto 35px;
   display: block;
   border: 2px solid black;
   color: white;
@@ -742,7 +742,12 @@ max-width: 100%;
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
+  line-height: 1.4;
   transition: 0.3s;
+}
+
+.about .container a span {
+  font-weight: 400;
 }
 
 .about .container a:hover {
