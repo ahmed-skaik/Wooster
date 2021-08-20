@@ -13,8 +13,11 @@ header {
 /* end components */
 
 /* team start */
+.team {
+    padding: 0 0 45px;
+}
+
 .team .container {
-    padding: 0 45px 45px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: none ;
