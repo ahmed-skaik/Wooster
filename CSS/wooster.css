@@ -133,13 +133,12 @@ header .container nav {
   align-items: center;
   justify-content: flex-end;
   overflow: hidden;
-  flex: 1;
   transition: 0.3s;
 }
 
 header .container nav i {
   color: var(--id-color);
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -284,6 +283,7 @@ header .container nav ul li a:hover {
   padding: 25px 50px;
   display: block;
   width: fit-content;
+  width: -moz-fit-content;
   margin: 0 auto;
   transition: 0.3s;
 }
@@ -317,6 +317,7 @@ header .container nav ul li a:hover {
 .landing-comp .container p {
   font-size: 18px;
   margin: 10px 0;
+  text-transform: uppercase;
 }
 
 .landing-comp .container a {
@@ -332,6 +333,7 @@ header .container nav ul li a:hover {
   line-height: 45px;
   transition: 0.3s;
   width: fit-content;
+  width: -moz-fit-content;
   align-self: center;
 }
 
@@ -353,6 +355,7 @@ header .container nav ul li a:hover {
 
   .landing-comp .container .paragraph {
     width: fit-content;
+    width: -moz-fit-content;
     margin-bottom: 10px;
   }
 
@@ -428,6 +431,7 @@ height: 90vh;
   font-size: 13px;
   display: block;
   width: fit-content;
+  width: -moz-fit-content;
   transition: 0.3s;
 }
 
@@ -634,6 +638,7 @@ height: 500px;
   color: black;
   background-color: white;
   width: fit-content;
+  width: -moz-fit-content;
   padding: 20px;
   border-radius: 50%;
   font-size: 14px;
@@ -1053,6 +1058,7 @@ footer .container .icons li {
   transition: 0.3s;
 }
 
+
 footer .container .icons a {
   color: white;
   transition: 0.3s;
@@ -1068,7 +1074,46 @@ footer .container .icons i {
 }
 
 footer .container .icons li.special {
-  cursor: pointer
+  cursor: pointer;
+  position: relative;
+}
+
+
+footer .container .icons li .message {
+  position: absolute;
+  background-color: #333;
+  font-size: 12px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  top: -57px;
+  width: 218px;
+  left: -82px;
+  display: none;
+}
+
+
+footer .container .icons li .message::after {
+  content: "";
+  position: absolute;
+  border: 10px solid;
+  border-color: #333 transparent transparent transparent;
+  bottom: -19px;
+  right: 47%;
+}
+
+footer .container .icons li.special:hover .message {
+  display: inline;
+}
+
+@media (max-width: 767px) {
+  footer .container .icons li .message {
+    left: -178px;
+    
+  }
+
+  footer .container .icons li .message::after {
+    right: 7px;
+  }
 }
 
 footer .container .icons i:hover:not(.fa-question-circle) {
@@ -1087,6 +1132,15 @@ footer .container p {
 
 footer .container p span {
   font-weight: 600;
+}
+
+footer .container p span a {
+  color: white;
+  text-decoration: none;
+}
+
+footer .container p span a:hover {
+  text-decoration: underline;
 }
 
 /* end footer */

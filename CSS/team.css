@@ -37,6 +37,24 @@ header {
     overflow: hidden;
 }
 
+.team .container div::before {
+  content: '"';
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  color: #777;
+  font-size: 50px;
+  transform: rotate(15deg);
+}
+
+@media (max-width: 567px) {
+  .team .container div::before {
+    font-size: 23px;
+    bottom: -2px;
+    right: 14px;
+  }
+}
+
 .team .container div::after {
     content: "";
     position: absolute;
